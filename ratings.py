@@ -10,19 +10,6 @@ def see_rated_restaurants(log_file):
 
     ratings_dict = {}
 
-    # new_restaurant = input("Enter a new restaurant.").title()
-    # new_score = int(input("Enter the restaurant score."))
-
-    # scores = [1,2,3,4,5]
-
-    # if new_score not in scores:
-    #     new_score = int(input("Rating must be between 1 and 5."))
-
-    # print(f"New restaurant added : {new_restaurant}"
-    #         f"Score: {new_score}")
-
-    # ratings_dict[new_restaurant] = new_score
-
     for line in txt: #for every line in txt file
         line = line.rstrip() #get rid of /n
         words = line.split(":") #splt each element by the ":" into new list called words
@@ -78,9 +65,12 @@ def user_choices():
                         "[3]Quit \n > "))
 
         if choices == 1:
+            #prints ratings from original scores.txt
             see_rated_restaurants("scores.txt")
             
         elif choices == 2:
+            #allows for user to enter in one new restaurant & rating 
+            #print updated ratings_dict and end loop
             add_restaurants("scores.txt")
             print("Addition Success!")
             break
